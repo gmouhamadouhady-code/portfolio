@@ -380,54 +380,6 @@
       font-size: 0.95rem;
     }
 
-    .diagram {
-      overflow-x: auto;
-      padding: 12px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-    }
-
-    .diagram svg {
-      display: block;
-      width: 100%;
-      min-width: 600px;
-      height: auto;
-    }
-
-    .dg-lan {
-      fill: none;
-      stroke: var(--border);
-      stroke-width: 1.5;
-      stroke-dasharray: 5 5;
-    }
-
-    .dg-node {
-      fill: var(--surface);
-      stroke: rgba(96, 165, 250, 0.55);
-      stroke-width: 1.2;
-    }
-
-    .dg-line {
-      stroke: var(--muted);
-      stroke-width: 1.5;
-    }
-
-    .dg-title {
-      fill: var(--text);
-      font: 700 12px Arial, Helvetica, sans-serif;
-    }
-
-    .dg-sub {
-      fill: var(--muted);
-      font: 11px Arial, Helvetica, sans-serif;
-    }
-
-    .dg-lan-label {
-      fill: var(--primary);
-      font: 700 12px Arial, Helvetica, sans-serif;
-    }
-
     .facts {
       list-style: none;
       display: grid;
@@ -733,10 +685,8 @@
             <h3>Réseaux informatiques</h3>
             <p>
               Adressage IP, sous-réseaux, configuration de switchs
-              et de routeurs, simulation de topologies avec
-              Cisco Packet Tracer.
+              et de routeurs.
             </p>
-            <a class="skill-link" href="#realisations">Voir mon TP réseau</a>
           </article>
 
           <article class="skill-card skill-main">
@@ -810,79 +760,11 @@
         <h2 class="section-title">Réalisations et certificats</h2>
 
         <p class="section-intro">
-          Un exercice pratique en réseau, un projet d’équipe
-          et les certificats qui valident mes bases.
+          Un projet d’équipe et les certificats qui valident
+          mes bases.
         </p>
 
         <div class="work-grid">
-          <article class="work-card">
-            <div class="work-meta">Cisco Packet Tracer 8.2</div>
-            <h3>Réseau à deux LAN avec serveur</h3>
-            <p>
-              Conception d’une topologie de deux réseaux locaux de cinq
-              postes chacun, reliés par deux routeurs, avec un serveur
-              sur le premier réseau.
-            </p>
-
-            <div class="diagram">
-              <svg viewBox="0 0 860 240" role="img" aria-label="Schéma de la topologie : un premier réseau local avec cinq PC, un switch et un serveur, relié par deux routeurs à un second réseau local avec un switch et cinq PC.">
-                <rect class="dg-lan" x="6" y="40" width="268" height="192" rx="12"/>
-                <rect class="dg-lan" x="586" y="40" width="268" height="108" rx="12"/>
-                <text class="dg-lan-label" x="20" y="64">LAN 1 · 192.168.1.0/24</text>
-                <text class="dg-lan-label" x="600" y="64">LAN 2 · 192.168.2.0/24</text>
-
-                <line class="dg-line" x1="118" y1="118" x2="162" y2="118"/>
-                <line class="dg-line" x1="210" y1="140" x2="210" y2="176"/>
-                <line class="dg-line" x1="258" y1="118" x2="306" y2="118"/>
-                <line class="dg-line" x1="402" y1="118" x2="440" y2="118"/>
-                <line class="dg-line" x1="536" y1="118" x2="602" y2="118"/>
-                <line class="dg-line" x1="698" y1="118" x2="742" y2="118"/>
-
-                <rect class="dg-node" x="22" y="96" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="70" y="115" text-anchor="middle">5 PC</text>
-                <text class="dg-sub" x="70" y="130" text-anchor="middle">.2 à .6</text>
-
-                <rect class="dg-node" x="162" y="96" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="210" y="115" text-anchor="middle">Switch W1</text>
-                <text class="dg-sub" x="210" y="130" text-anchor="middle">Cisco 2960</text>
-
-                <rect class="dg-node" x="162" y="176" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="210" y="195" text-anchor="middle">Serveur</text>
-                <text class="dg-sub" x="210" y="210" text-anchor="middle">192.168.1.7</text>
-
-                <rect class="dg-node" x="306" y="96" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="354" y="115" text-anchor="middle">Routeur R1</text>
-                <text class="dg-sub" x="354" y="130" text-anchor="middle">ISR 4331</text>
-
-                <rect class="dg-node" x="440" y="96" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="488" y="115" text-anchor="middle">Routeur R2</text>
-                <text class="dg-sub" x="488" y="130" text-anchor="middle">ISR 4331</text>
-
-                <rect class="dg-node" x="602" y="96" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="650" y="115" text-anchor="middle">Switch W2</text>
-                <text class="dg-sub" x="650" y="130" text-anchor="middle">Cisco 2960</text>
-
-                <rect class="dg-node" x="742" y="96" width="96" height="44" rx="8"/>
-                <text class="dg-title" x="790" y="115" text-anchor="middle">5 PC</text>
-                <text class="dg-sub" x="790" y="130" text-anchor="middle">.2 à .6</text>
-              </svg>
-            </div>
-
-            <ul class="facts">
-              <li>Deux réseaux&nbsp;: 192.168.1.0/24 et 192.168.2.0/24</li>
-              <li>Dix PC répartis sur deux switchs Cisco 2960</li>
-              <li>Deux routeurs Cisco ISR 4331</li>
-              <li>Serveur avec les services HTTP, FTP, TFTP, NTP et Syslog activés</li>
-            </ul>
-
-            <div class="tags">
-              <span>Packet Tracer</span>
-              <span>Adressage IP</span>
-              <span>Switching</span>
-              <span>Serveurs</span>
-            </div>
-          </article>
-
           <article class="work-card">
             <div class="work-meta">Projet d’équipe</div>
             <h3>Link UNCHK, le réseau des étudiants de l’UNCHK</h3>
