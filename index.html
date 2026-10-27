@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -240,7 +239,7 @@
       font-size: 0.95rem;
     }
 
-    /* Compétences */
+    /* Domaines d'intérêt */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -273,6 +272,211 @@
     .skill-card p {
       color: var(--muted);
       font-size: 0.92rem;
+    }
+
+    /* Compétences détaillées */
+    .skills-detail {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+
+    .skill-main {
+      grid-column: span 3;
+    }
+
+    .skill-sub {
+      grid-column: span 3;
+    }
+
+    .skill-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .skill-head .skill-icon {
+      margin-bottom: 0;
+    }
+
+    .level {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 4px 11px;
+      border-radius: 50px;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      background: rgba(96, 165, 250, 0.08);
+      color: #bfdbfe;
+      font-size: 0.78rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .level::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    .level-cert {
+      border-color: rgba(52, 211, 153, 0.3);
+      background: rgba(52, 211, 153, 0.08);
+      color: #6ee7b7;
+    }
+
+    .level-progress {
+      border-color: rgba(251, 191, 36, 0.3);
+      background: rgba(251, 191, 36, 0.07);
+      color: #fcd34d;
+    }
+
+    .skill-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .skill-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Réalisations */
+    .work-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 20px;
+    }
+
+    .work-card {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    .work-card h3 {
+      font-size: 1.2rem;
+    }
+
+    .work-meta {
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .work-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .diagram {
+      overflow-x: auto;
+      padding: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .diagram svg {
+      display: block;
+      width: 100%;
+      min-width: 600px;
+      height: auto;
+    }
+
+    .dg-lan {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 1.5;
+      stroke-dasharray: 5 5;
+    }
+
+    .dg-node {
+      fill: var(--surface);
+      stroke: rgba(96, 165, 250, 0.55);
+      stroke-width: 1.2;
+    }
+
+    .dg-line {
+      stroke: var(--muted);
+      stroke-width: 1.5;
+    }
+
+    .dg-title {
+      fill: var(--text);
+      font: 700 12px Arial, Helvetica, sans-serif;
+    }
+
+    .dg-sub {
+      fill: var(--muted);
+      font: 11px Arial, Helvetica, sans-serif;
+    }
+
+    .dg-lan-label {
+      fill: var(--primary);
+      font: 700 12px Arial, Helvetica, sans-serif;
+    }
+
+    .facts {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .facts li::before {
+      content: "– ";
+      color: var(--primary);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .certs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .facts-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 28px;
+    }
+
+    .cert-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .cert-id {
+      font-size: 0.82rem;
+      word-break: break-all;
     }
 
     /* Objectif */
@@ -316,6 +520,24 @@
       border-top: 1px solid var(--border);
     }
 
+    a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Tablette */
+    @media (max-width: 960px) {
+      .nav-links {
+        gap: 18px;
+      }
+
+      .certs,
+      .facts-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
     /* Mobile */
     @media (max-width: 760px) {
       .nav-content {
@@ -339,8 +561,14 @@
       }
 
       .about-grid,
-      .skills-grid {
+      .skills-grid,
+      .skills-detail {
         grid-template-columns: 1fr;
+      }
+
+      .skill-main,
+      .skill-sub {
+        grid-column: auto;
       }
 
       .about-grid {
@@ -377,7 +605,9 @@
       <ul class="nav-links">
         <li><a href="#accueil">Accueil</a></li>
         <li><a href="#apropos">À propos</a></li>
+        <li><a href="#domaines">Domaines</a></li>
         <li><a href="#competences">Compétences</a></li>
+        <li><a href="#realisations">Réalisations</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -405,7 +635,7 @@
           </a>
 
           <a href="#competences" class="btn btn-secondary">
-            Mes domaines d'intérêt
+            Mes compétences
           </a>
         </div>
       </div>
@@ -443,7 +673,7 @@
       </div>
     </section>
 
-    <section id="competences">
+    <section id="domaines">
       <div class="container">
         <div class="section-label">Mon univers technique</div>
         <h2 class="section-title">Mes domaines d'intérêt</h2>
@@ -484,6 +714,245 @@
       </div>
     </section>
 
+    <section class="about" id="competences">
+      <div class="container">
+        <div class="section-label">Mon niveau actuel</div>
+        <h2 class="section-title">Mes compétences</h2>
+
+        <p class="section-intro">
+          Ce que je maîtrise déjà, ce que j’ai validé par un certificat
+          et ce que je continue d’apprendre.
+        </p>
+
+        <div class="skills-detail">
+          <article class="skill-card skill-main">
+            <div class="skill-head">
+              <div class="skill-icon">⇄</div>
+              <span class="level">Pratique approfondie</span>
+            </div>
+            <h3>Réseaux informatiques</h3>
+            <p>
+              Adressage IP, sous-réseaux, configuration de switchs
+              et de routeurs, simulation de topologies avec
+              Cisco Packet Tracer.
+            </p>
+            <a class="skill-link" href="#realisations">Voir mon TP réseau</a>
+          </article>
+
+          <article class="skill-card skill-main">
+            <div class="skill-head">
+              <div class="skill-icon">◎</div>
+              <span class="level">Maîtrisé</span>
+            </div>
+            <h3>Wireshark</h3>
+            <p>
+              Capture et analyse du trafic réseau&nbsp;: filtres, lecture
+              des trames et compréhension des protocoles échangés.
+            </p>
+          </article>
+
+          <article class="skill-card skill-sub">
+            <div class="skill-head">
+              <div class="skill-icon">▤</div>
+              <span class="level level-cert">Certificat de réussite</span>
+            </div>
+            <h3>Data engineering</h3>
+            <p>
+              Certificat obtenu dans le cadre du programme FORCE-N,
+              avec l’Université numérique Cheikh Hamidou Kane.
+            </p>
+            <a class="skill-link" href="assets/attestation-data-engineering-force-n.pdf" target="_blank" rel="noopener">Voir l’attestation</a>
+          </article>
+
+          <article class="skill-card skill-sub">
+            <div class="skill-head">
+              <div class="skill-icon">&lt;/&gt;</div>
+              <span class="level level-cert">Certificat de réussite</span>
+            </div>
+            <h3>HTML</h3>
+            <p>
+              Notions fondamentales du langage validées par le certificat
+              « HTML Fundamentals ».
+            </p>
+            <a class="skill-link" href="assets/certificat-html-fundamentals.pdf" target="_blank" rel="noopener">Voir le certificat</a>
+          </article>
+
+          <article class="skill-card skill-sub">
+            <div class="skill-head">
+              <div class="skill-icon">✎</div>
+              <span class="level level-progress">En progression</span>
+            </div>
+            <h3>CSS</h3>
+            <p>
+              Mise en forme et mise en page de pages web&nbsp;: je continue
+              d’approfondir en pratiquant sur mes propres projets.
+            </p>
+          </article>
+
+          <article class="skill-card skill-sub">
+            <div class="skill-head">
+              <div class="skill-icon">⌥</div>
+              <span class="level level-progress">En progression</span>
+            </div>
+            <h3>Python</h3>
+            <p>
+              Apprentissage du langage pour développer ma logique
+              de programmation et automatiser des tâches.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="realisations">
+      <div class="container">
+        <div class="section-label">Mes travaux</div>
+        <h2 class="section-title">Réalisations et certificats</h2>
+
+        <p class="section-intro">
+          Un exercice pratique en réseau, un projet d’équipe
+          et les certificats qui valident mes bases.
+        </p>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <div class="work-meta">Cisco Packet Tracer 8.2</div>
+            <h3>Réseau à deux LAN avec serveur</h3>
+            <p>
+              Conception d’une topologie de deux réseaux locaux de cinq
+              postes chacun, reliés par deux routeurs, avec un serveur
+              sur le premier réseau.
+            </p>
+
+            <div class="diagram">
+              <svg viewBox="0 0 860 240" role="img" aria-label="Schéma de la topologie : un premier réseau local avec cinq PC, un switch et un serveur, relié par deux routeurs à un second réseau local avec un switch et cinq PC.">
+                <rect class="dg-lan" x="6" y="40" width="268" height="192" rx="12"/>
+                <rect class="dg-lan" x="586" y="40" width="268" height="108" rx="12"/>
+                <text class="dg-lan-label" x="20" y="64">LAN 1 · 192.168.1.0/24</text>
+                <text class="dg-lan-label" x="600" y="64">LAN 2 · 192.168.2.0/24</text>
+
+                <line class="dg-line" x1="118" y1="118" x2="162" y2="118"/>
+                <line class="dg-line" x1="210" y1="140" x2="210" y2="176"/>
+                <line class="dg-line" x1="258" y1="118" x2="306" y2="118"/>
+                <line class="dg-line" x1="402" y1="118" x2="440" y2="118"/>
+                <line class="dg-line" x1="536" y1="118" x2="602" y2="118"/>
+                <line class="dg-line" x1="698" y1="118" x2="742" y2="118"/>
+
+                <rect class="dg-node" x="22" y="96" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="70" y="115" text-anchor="middle">5 PC</text>
+                <text class="dg-sub" x="70" y="130" text-anchor="middle">.2 à .6</text>
+
+                <rect class="dg-node" x="162" y="96" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="210" y="115" text-anchor="middle">Switch W1</text>
+                <text class="dg-sub" x="210" y="130" text-anchor="middle">Cisco 2960</text>
+
+                <rect class="dg-node" x="162" y="176" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="210" y="195" text-anchor="middle">Serveur</text>
+                <text class="dg-sub" x="210" y="210" text-anchor="middle">192.168.1.7</text>
+
+                <rect class="dg-node" x="306" y="96" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="354" y="115" text-anchor="middle">Routeur R1</text>
+                <text class="dg-sub" x="354" y="130" text-anchor="middle">ISR 4331</text>
+
+                <rect class="dg-node" x="440" y="96" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="488" y="115" text-anchor="middle">Routeur R2</text>
+                <text class="dg-sub" x="488" y="130" text-anchor="middle">ISR 4331</text>
+
+                <rect class="dg-node" x="602" y="96" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="650" y="115" text-anchor="middle">Switch W2</text>
+                <text class="dg-sub" x="650" y="130" text-anchor="middle">Cisco 2960</text>
+
+                <rect class="dg-node" x="742" y="96" width="96" height="44" rx="8"/>
+                <text class="dg-title" x="790" y="115" text-anchor="middle">5 PC</text>
+                <text class="dg-sub" x="790" y="130" text-anchor="middle">.2 à .6</text>
+              </svg>
+            </div>
+
+            <ul class="facts">
+              <li>Deux réseaux&nbsp;: 192.168.1.0/24 et 192.168.2.0/24</li>
+              <li>Dix PC répartis sur deux switchs Cisco 2960</li>
+              <li>Deux routeurs Cisco ISR 4331</li>
+              <li>Serveur avec les services HTTP, FTP, TFTP, NTP et Syslog activés</li>
+            </ul>
+
+            <div class="tags">
+              <span>Packet Tracer</span>
+              <span>Adressage IP</span>
+              <span>Switching</span>
+              <span>Serveurs</span>
+            </div>
+          </article>
+
+          <article class="work-card">
+            <div class="work-meta">Projet d’équipe</div>
+            <h3>Link UNCHK, le réseau des étudiants de l’UNCHK</h3>
+            <p>
+              Plateforme web qui réunit les étudiants de l’Université numérique
+              Cheikh Hamidou Kane : chacun y crée son profil, retrouve les autres
+              étudiants, partage ses projets et accède aux ressources de cours.
+            </p>
+
+            <ul class="facts facts-2">
+              <li>Profils avec filière, ENO, biographie et compétences</li>
+              <li>Annuaire des étudiants et demandes d’amis</li>
+              <li>Fil d’actualité : publications, photos, likes et commentaires</li>
+              <li>Messagerie privée et groupes étudiants</li>
+              <li>Événements, notifications et projets étudiants</li>
+              <li>Espace académique : cours, fiches et annales avec modération</li>
+            </ul>
+
+            <div class="tags">
+              <span>PHP</span>
+              <span>MySQL / MariaDB</span>
+              <span>HTML / CSS</span>
+              <span>JavaScript</span>
+              <span>Mots de passe hachés</span>
+              <span>Protection CSRF</span>
+            </div>
+          </article>
+
+          <div class="certs">
+            <article class="work-card cert-card">
+              <a href="assets/certificat-html-fundamentals.pdf" target="_blank" rel="noopener">
+                <img
+                  src="assets/certificat-html-fundamentals.jpg"
+                  alt="Certificat de réussite HTML Fundamentals décerné à Mouhamadou Hady Gaye le 22 octobre 2026"
+                  loading="lazy"
+                  width="1321"
+                  height="932">
+              </a>
+              <div class="work-meta">Certificat de réussite</div>
+              <h3>HTML Fundamentals</h3>
+              <p>
+                Délivré le 22 octobre 2026 et signé Kevin Spektor, CTO.
+                Il valide mes bases du langage HTML.
+              </p>
+              <p class="cert-id">Identifiant&nbsp;: 1RGTfC-html-mQsrS3</p>
+              <a class="skill-link" href="assets/certificat-html-fundamentals.pdf" target="_blank" rel="noopener">Ouvrir le certificat en PDF</a>
+            </article>
+
+            <article class="work-card cert-card">
+              <a href="assets/attestation-data-engineering-force-n.pdf" target="_blank" rel="noopener">
+                <img
+                  src="assets/attestation-data-engineering-force-n.jpg"
+                  alt="Attestation de réussite du programme FORCE-N en Data engineering, décernée à Mouhamadou Hady Gaye"
+                  loading="lazy"
+                  width="1287"
+                  height="910">
+              </a>
+              <div class="work-meta">Attestation de réussite</div>
+              <h3>Data engineering</h3>
+              <p>
+                Certificat du programme FORCE-N, mené avec l’Université
+                numérique Cheikh Hamidou Kane et la Mastercard Foundation.
+              </p>
+              <a class="skill-link" href="assets/attestation-data-engineering-force-n.pdf" target="_blank" rel="noopener">Ouvrir l’attestation en PDF</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section>
       <div class="container">
         <div class="goal">
@@ -510,7 +979,7 @@
 
         <div class="buttons">
           <a
-            href="gmouhamadouhady@gmail.com"
+            href="mailto:gmouhamadouhady@gmail.com"
             class="btn btn-primary"
           >
             Me contacter par e-mail
